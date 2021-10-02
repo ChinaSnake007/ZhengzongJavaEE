@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <mime-mapping>
+    <extension>htm</extension>
+    <mime-type>text/html;charset=gb2312</mime-type>
+  </mime-mapping>
+</web-app>
+
