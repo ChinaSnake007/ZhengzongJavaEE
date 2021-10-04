@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class SqlSrvDBConn {
 
-    public void Getconnection(String username,String password){
+    public ResultSet GetResult(String username,String password){
         String RL="jdbc:sqlserver://localhost:1433;DatabaseName=yagnsen";
 
         String sqlStr="select * from users where usernames = \'"+username+"\' and password = \'"+password +"\'";
@@ -14,11 +14,8 @@ public class SqlSrvDBConn {
             Statement st=con.createStatement();
             ResultSet rs=st.executeQuery(sqlStr);
             while(rs.next()){
-                System.out.println("访问成功");
-
-
+                return rs;
             }
-
             rs.close();
             con.close();
 
@@ -27,12 +24,13 @@ public class SqlSrvDBConn {
 
             err.printStackTrace(System.out);
         }
+        return null;
     }
 
     public static void main(String[] args){
         String username = "123456";
         String password = "123456";
         SqlSrvDBConn a = new SqlSrvDBConn();
-        a.Getconnection(username,password);
+
     }
 }

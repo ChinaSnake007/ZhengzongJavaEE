@@ -1,14 +1,18 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="org.easybooks.test.model.vo.*" %>
 <html>
 <head>
     <title>loginCL.jsp页面</title>
 </head>
 <body>
-<%
-    SqlSrvDBConn a = new SqlSrvDBConn();
-
-%>
+    <% request.setCharacterEncoding("GB2312");%>
+    <jsp:useBean id="uu" class = "org.easybooks.test.model.vo.UserTable"/>
+    <jsp:setProperty name="uu" property="*"/>
+    <%=uu.getUsername()%>
+    <tr><%=uu.getPassword()%></tr>
+    <%if(uu.CheckAccount(uu.getUsername(),uu.getPassword()) == 1){%>
+        <jsp:forward page="welcome.jsp" />　
+    <%}else{%>
+        <jsp:forward page="error.jsp"/>
+    <%}%>
 </body>
 </html>
