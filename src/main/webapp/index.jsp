@@ -8,5 +8,8 @@
   密    码：<input type="text"value="" name="password"/><br>
   <input type="submit"value="登录" name="btn"/>
 </form>
+<pre>
+  你好，我是你爹
+</pre>
 </body>
 </html>
